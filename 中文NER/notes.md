@@ -121,3 +121,9 @@ CRF
 
 ### 实验
 大多数设置与 Lattice-LSTM 相同，包括预训练的词向量、测试数据集、比较基准、评估度量等
+
+
+
+
+## ACL2020 《Chinese NER Using Flat-Lattice Transformer》
+RNN 和 CNN 难以对长距离依赖建模，但这在 NER 中很有用
