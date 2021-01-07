@@ -192,7 +192,7 @@ FFN 是在位置方面无线性转换的多层感知机
 +   Lexicon-based NER
 +   Lattice-based Transformer
 
-## COLING2020 《Porous Lattice Transformer Encoder for Chinese NER 》
+## COLING2020 《Porous Lattice Transformer Encoder for Chinese NER》
 
 ### 特点
 
@@ -218,3 +218,22 @@ FFN 是在位置方面无线性转换的多层感知机
         +   Porous Multi-Head Attention(PMHA)
 
             为了维持self-attention捕获长距离依赖的能力且增强捕获短范围依赖的能力，将transformer结构从全连接拓扑结构改为中心共享结构
+
++   BiGRU-CRF解码器
+
++   训练
+
+### 实验
+
+#### 实验设置
+
++   数据集同上
++   比较
+    +   Lattice LSTM: 集成词典信息到字符表示，经过门控循环单元，避免分词错误
+    +   LR-CNN：通过rethinking机制集成词典信息
+    +   BERT-Tagger：利用BERT最后一层输出因为字符级可以丰富上下文表示从而进行句子标注
+    +   PLTE[BERT]/LR-CNN[BERT]/Lattice LATM[BERT]：这三种方法用预训练的BERT表示来替代字符表示层，用softmax层来进行句子标记
++   超参数设置
+
+## EMNLP2020 《Entity Enhanced BERT Pre-training for Chinese NER》
+
