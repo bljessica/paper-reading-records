@@ -237,3 +237,8 @@ FFN 是在位置方面无线性转换的多层感知机
 
 ## EMNLP2020 《Entity Enhanced BERT Pre-training for Chinese NER》
 
+### 特点
+
++   半监督学习
++   使用预训练的语言模型（LM）
+
