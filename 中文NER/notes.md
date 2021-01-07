@@ -15,6 +15,7 @@
 + 通过网格结构的LSTM将句子中与词典匹配的词表示出来，从而将潜在词信息集成到基于字的LSTM-CRF中
 + 使用网格结构的LSTM来自动控制信息从句子的开头流向末尾
 + 使用门控递归单元来选择句子中最相关的字和词
++ 有向无环图
 
 ### 优点
 不会出现分词错误。
@@ -190,3 +191,30 @@ FFN 是在位置方面无线性转换的多层感知机
 
 +   Lexicon-based NER
 +   Lattice-based Transformer
+
+## COLING2020 《Porous Lattice Transformer Encoder for Chinese NER 》
+
+### 特点
+
++   提出了一个新奇的用于中文NER的网格状transformer编码器，可以进行批处理且可以捕获字符和匹配的单词之间的依赖
++   通过一种多孔机制修改lattice-aware attention分布，增强捕获有用的局部上下文的能力
++   在四个数据集上进行测试，比基准方法快11.4倍，并且表现更好
++   此模型可以容易地集成到BERT中，二者结合表现更好
+
+### 模型
+
++   Lattice输入层
+
+    +   将语义信息和位置信息集成到字符表示中
+
++   多孔网格状transformer编码
+
+    +   通过用中心共享结构取代全连接拓扑来增强相邻元素之间的联系，从而学习到稀疏attention系数
+
+        +   Lattice-aware Self-Attention(LASA)
+
+    +   用multi-head attention来从不同表示子空间捕获信息
+
+        +   Porous Multi-Head Attention(PMHA)
+
+            为了维持self-attention捕获长距离依赖的能力且增强捕获短范围依赖的能力，将transformer结构从全连接拓扑结构改为中心共享结构
