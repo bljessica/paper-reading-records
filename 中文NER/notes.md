@@ -289,3 +289,5 @@ FFN 是在位置方面无线性转换的多层感知机
     +   预训练
     +   微调
 
+## ACL2019 《A Neural Multi-digraph Model for Chinese NER with Gazetteers》
+
