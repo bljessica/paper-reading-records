@@ -291,3 +291,7 @@ FFN 是在位置方面无线性转换的多层感知机
 
 ## ACL2019 《A Neural Multi-digraph Model for Chinese NER with Gazetteers》
 
+地名词典对于中文NER很有用，但是现有方法通常依赖于手工决定选择策略，这通常导致效果不是最优的
+
+### 特点
+基于GNN，结合带有地名词典信息的多有向图结构，从而自动学习如何将多个地名词典信息集成到NER中
